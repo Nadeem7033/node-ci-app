@@ -2,40 +2,39 @@ pipeline {
     agent any
 
     tools {
-        nodejs "node18"         // Name of Node.js installation in Jenkins
+        nodejs "node18"
     }
 
     stages {
-
         stage('Checkout Code') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/Nadeem7033/node-ci-app.git'
+                checkout scm
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'npm test'
+                bat 'npm test'
             }
         }
 
         stage('Build') {
             steps {
-                echo "Build Step (Node apps usually don’t need build unless using TypeScript)"
+                bat 'echo "Build step completed"'
             }
         }
 
         stage('Start App') {
             steps {
-                sh 'npm start &'
+                bat 'node index.js'
             }
         }
     }
 }
+
