@@ -1,20 +1,16 @@
 {
   "name": "ci-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Node.js CI pipeline demo app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "echo \"No tests yet\" && exit 0"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Nadeem Ahmed",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "express": "^5.2.1"
-  }
-}
-"scripts": {
-  "start": "node index.js",
-  "test": "echo \"Running tests...\""
+    "express": "^4.18.2"
+  },
+  "devDependencies": {}
 }
