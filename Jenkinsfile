@@ -1,12 +1,8 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs "node18"
-    }
-
     stages {
-        stage('Checkout Code') {
+        stage('Checkout') {
             steps {
                 checkout scm
             }
@@ -26,15 +22,14 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'echo "Build step completed"'
+                echo "Build step completed"
             }
         }
 
-        stage('Start App') {
+        stage('Deploy') {
             steps {
-                bat 'node index.js'
+                echo "App is ready for deployment (not starting server in pipeline)"
             }
         }
     }
 }
-
